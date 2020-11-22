@@ -1,0 +1,42 @@
+/* A classe você pode repetir, e o id não */
+
+/* 
+Cascading StyleSheet 
+      
+body img {
+        
+}
+*/
+
+body {
+    /* Propriedae: valor; */
+
+    background: #e5e5e5;
+    color: #24282b;
+
+    text-align: center;
+}
+
+button {
+    color: #ff5e84;
+
+    border: none;
+
+    font-weight: bold;
+    background: none;
+}
+
+.fat {
+    color: white;
+    /* Sobrescreve o padrão */
+    background: #ff5e84;
+}
+
+#footer a {
+    /* color: #25282B; */
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
