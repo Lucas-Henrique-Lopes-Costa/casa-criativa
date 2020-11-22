@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Recebe configurações da página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa Criativa</title>
+
+    <link rel="icon" href="house.svg" />
+
+    <style>
+      /* A classe você pode repetir, e o id não */
+
+      /* 
+      Cascading StyleSheet 
+      
+      body img {
+        
+      }
+      */
+
+      body {
+        /* Propriedae: valor; */
+
+        background: #e5e5e5;
+        color: #24282b;
+
+        text-align: center;
+      }
+
+      button {
+        color: #ff5e84;
+
+        border: none;
+
+        font-weight: bold;
+        background: none;
+      }
+
+      .fat {
+        color: white; /* Sobrescreve o padrão */
+        background: #ff5e84;
+      }
+
+      #footer a {
+        /* color: #25282B; */
+        text-decoration: none;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Casa Criativa</h1>
+    <img
+      src="https://github.com/christyanbrayan/casa-criativa/raw/master/public/logo.png"
+      alt="Logo"
+    />
+
+    <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
+
+    <p>
+      Iremos catalogar ideias,
+      <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong> e tudo
+      que for necessário para tornar esse momento mais interessante.
+    </p>
+
+    <p>
+      Comece clicando em ver ideias para ver as ideias cadastradas e contribua
+      adicioando a sua ideia.
+    </p>
+
+    <button>+ Adicionar Ideia</button>
+    <button class="fat">Ver Ideias</button>
+
+    <p id="footer">
+      Com 💝
+      <a
+        href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/
+      "
+        target="_blank"
+        rel="noopener noreferrer"
+        >Lucas Henrique</a
+      >
+    </p>
+
+    <script>
+      
+      /* Acessando uma Tag */
+
+      document
+        .querySelector(".fat") /* Encontra o botão "fat" */
+        .addEventListener("click", function() { /* Quando clikar, ele executa a função */
+          document
+            .querySelector("#footer")
+            .classList
+            .toggle("hide") /* Adiciona a classe "hide" que entra em uma estilização */
+        })
+
+    </script>
+
+  </body>
+</html>
