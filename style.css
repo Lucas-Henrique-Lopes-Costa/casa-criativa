@@ -81,7 +81,7 @@ p,
     /* É o máximo */
 
     /* Se alinhando ao meio */
-    margin: 15px auto;
+    margin: 15vh auto;
 
     /* Se a altura for pequena */
     /* height: 100px; */
@@ -127,6 +127,8 @@ button {
     font-weight: bold;
     line-height: 18px;
     letter-spacing: 0.2px;
+
+    outline: none; /* Tira a borda preta de quando clica */
 
     cursor: pointer;
 
@@ -235,14 +237,20 @@ footer a {
 /* Modal */
 
 #modal {
-    background: #FF5E84;
-
-    /* Sofrebonto tudo */
+    background: #ff5e84;
+    
+    /* Sobrepõe tudo */
     position: absolute;
-    top: 0;
 
-    width: 99vw;
-    height: 120vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 99.5vw;
+    height: 112vh;
+
+    padding-top: 55px;
 
     display: flex;
     /* align-items: center; */
@@ -254,85 +262,76 @@ footer a {
 }
 
 #modal .content {
-    margin-top: 28px;
-
     color: white;
 }
 
 #modal .content h1 {
     text-align: center;
-
     text-transform: uppercase;
 }
 
-#modal .content form {
+#modal form {
     width: 80%;
     max-width: 800px;
-
     margin: 0 auto;
 
     display: grid;
-    /* Dividindo em colunas */
     grid-template-columns: 1fr 1fr;
 
-    gap: 20px;
+    gap: 8px 20px;
 }
 
-/* Pega o "filho 3"  - pseu do elemento */
 .content form div:nth-child(3),
 .content form div:nth-child(4),
 .content form div:nth-child(5) {
-    /* Espande para as duas colunas */
     grid-column: span 2;
 }
 
 form input,
 form textarea {
     width: 100%;
-
     padding: 12px;
 
-    /* Considera o Preenchimento + o Conteúdo */
-    box-sizing: border-box;
+    border-radius: 7px;
 
-    border-radius: 6px;
-    border: 1px solid rgba(175, 38, 70, 0.3);
+    border: 1px solid rgba(168, 53, 80, .2);
 
     outline: none;
 
-    font-size: 16px;
+    box-sizing: border-box;
 }
 
-form labe {
+form label {
     font-weight: 600;
     line-height: 32px;
     letter-spacing: 0.8px;
-
 }
 
 form a {
     width: 150px;
     height: 40px;
-    
-    background-color: #ffffff22;
-    color: white;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     font-size: 14px;
     font-weight: bold;
-
     border-radius: 6px;
 
+    background-color: #ffffff22;
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    
     /* O self é para o grid */
     align-self: end;
+
+    transition: 400ms;
 }
 
 form a:hover {
     background: #fff;
-    color: #FF5E84;
+    color: #ff5e84;
 
     text-decoration: none;
 }
@@ -344,20 +343,20 @@ form button {
     height: 40px;
 
     border-radius: 6px;
-    
-    cursor: pointer;
 
-    margin-top: 32px;
+    cursor: pointer;
 
     grid-column: 2; /* Coloca na coluna 2 */
 
     justify-self: end;
+    margin-top: 22px;
+    
+    transition: 400ms;
 }
 
 form button:hover {
     background-color: #09e39a;
     color: white;
-
     text-decoration: none;
 }
 
