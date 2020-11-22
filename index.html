@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Recebe configurações da página -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Casa Criativa</title>
 
-    <link rel="icon" href="house.svg" />
+<head>
+  <!-- Recebe configurações da página -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Criativa</title>
 
-    <style>
-      /* A classe você pode repetir, e o id não */
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
+  <link rel="icon" href="house.svg" />
 
-      /* 
-      Cascading StyleSheet 
-      
-      body img {
-        
-      }
-      */
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      body {
-        /* Propriedae: valor; */
+<body>
+  
+  <div id="container">
+    
+    <section id="intro">
 
-        background: #e5e5e5;
-        color: #24282b;
+      <header>
+        <img src="logo.png" alt="Logo" />
+      </header>
 
-        text-align: center;
-      }
+      <main>
+        <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
 
-      button {
-        color: #ff5e84;
+        <p>
+          Iremos catalogar ideias,
+          <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong> e
+          tudo que for necessário para tornar esse momento mais interessante.
+        </p>
 
-        border: none;
+        <p>
+          Comece clicando em ver ideias para ver as ideias cadastradas e
+          contribua adicioando a sua ideia.
+        </p>
+      </main>
 
-        font-weight: bold;
-        background: none;
-      }
+      <section id="buttons">
+        <button>+ Adicionar Ideia</button>
+        <button class="fat">Ver Ideias</button>
+      </section>
+    
+      <footer>
+        Com 💝<a href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/" target="_blank" rel="noopener noreferrer">Lucas Henrique</a>
+      </footer>
 
-      .fat {
-        color: white; /* Sobrescreve o padrão */
-        background: #ff5e84;
-      }
+    </section>
+    
+    <section id="last-ideias">
+      <div class="idea">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/3500/3500589.svg" alt="Imagem de Curso de Programação">
 
-      #footer a {
-        /* color: #25282B; */
-        text-decoration: none;
-      }
+        <div class="content">
+          <h3>Curso de Programação</h3>
+          <p>Estudo</p>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos minima saepe dolore neque architecto perspiciatis reprehenderit, animi pariatur dolorem ea quia porro dicta!
+          </div>
+          <a href="#">Ir para a Ideia</a>
+        </div>
+      </div>
 
-      .hide {
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Casa Criativa</h1>
-    <img
-      src="https://github.com/christyanbrayan/casa-criativa/raw/master/public/logo.png"
-      alt="Logo"
-    />
+      <div class="idea">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/3788/3788765.svg" alt="Imagem de Exercício">
 
-    <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
+        <div class="content">
+          <h3>Exercício</h3>
+          <p>Saúde</p>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos minima saepe dolore neque architecto perspiciatis reprehenderit, animi pariatur dolorem ea quia porro dicta!
+          </div>
+          <a href="#">Ir para a Ideia</a>
+        </div>
+      </div>
 
-    <p>
-      Iremos catalogar ideias,
-      <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong> e tudo
-      que for necessário para tornar esse momento mais interessante.
-    </p>
+      <div class="idea">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/3048/3048398.svg" alt="Imagem de Meditação">
 
-    <p>
-      Comece clicando em ver ideias para ver as ideias cadastradas e contribua
-      adicioando a sua ideia.
-    </p>
+        <div class="content">
+          <h3>Meditação</h3>
+          <p>Saúde</p>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos minima saepe dolore neque architecto perspiciatis reprehenderit, animi pariatur dolorem ea quia porro dicta!
+          </div>
+          <a href="#">Ir para a Ideia</a>
+        </div>
+      </div>
+    </section>
 
-    <button>+ Adicionar Ideia</button>
-    <button class="fat">Ver Ideias</button>
+  </div>
 
-    <p id="footer">
-      Com 💝
-      <a
-        href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/
-      "
-        target="_blank"
-        rel="noopener noreferrer"
-        >Lucas Henrique</a
-      >
-    </p>
+  <script src="scripts.js"></script>
+</body>
 
-    <script src="scripts.js"></script>
-  </body>
 </html>
