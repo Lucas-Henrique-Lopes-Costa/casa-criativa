@@ -30,16 +30,7 @@ body #container {
 }
 */
 
-body {
-    /* Propriedae: valor; */
-
-    background: #e5e5e5;
-    color: #24282b;
-
-    font-family: 'Montserrat', sans-serif;
-
-    margin: 0;
-}
+/* Barra de rolagem */
 
 ::-webkit-scrollbar-track {
     background-color: #F4F4F4;
@@ -52,6 +43,25 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #dad7d7;
+}
+
+/* Global */
+
+body {
+    /* Propriedae: valor; */
+
+    background: #e5e5e5;
+    color: #24282b;
+
+    font-family: 'Montserrat', sans-serif;
+
+    margin: 0;
+}
+
+body.hideScroll {
+    /* Tira as rolagens */
+    overflow: hidden;
+
 }
 
 a {
@@ -74,6 +84,51 @@ p,
     letter-spacing: 0.1px;
 }
 
+.button {
+    color: white;
+    /* Sobrescreve o padrão */
+    background: #ff5e84;
+
+    width: 150px;
+    height: 40px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Colocando uma borda */
+    box-shadow: 0px
+        /* X */
+        8px
+        /* Y */
+        16px
+        /* Blur */
+        rgba(255, 0, 92, 0.3);
+}
+
+a.button:hover {
+    background-color: #ca39dd;
+    color: white;
+    text-decoration: none;
+
+    box-shadow: 0px
+        /* X */
+        8px
+        /* Y */
+        20px
+        /* Blur */
+        rgba(255, 0, 92, 0.3);
+
+    transition: 450ms;
+    text-decoration: none;
+}
+
+
 #container {
     width: 80%;
     /* Se não foi no máximo */
@@ -81,7 +136,7 @@ p,
     /* É o máximo */
 
     /* Se alinhando ao meio */
-    margin: 15vh auto;
+    margin: 9vh auto;
 
     /* Se a altura for pequena */
     /* height: 100px; */
@@ -128,7 +183,8 @@ button {
     line-height: 18px;
     letter-spacing: 0.2px;
 
-    outline: none; /* Tira a borda preta de quando clica */
+    outline: none;
+    /* Tira a borda preta de quando clica */
 
     cursor: pointer;
 
@@ -149,34 +205,6 @@ button:hover {
         rgba(255, 0, 92, 0.5);
 
     transition: 350ms;
-}
-
-button.fat {
-    color: white;
-    /* Sobrescreve o padrão */
-    background: #ff5e84;
-
-    width: 150px;
-    height: 40px;
-
-    /* Colocando uma borda */
-    box-shadow: 0px
-        /* X */
-        8px
-        /* Y */
-        16px
-        /* Blur */
-        rgba(255, 0, 92, 0.3);
-}
-
-button.fat:hover {
-    box-shadow: 0px
-        /* X */
-        8px
-        /* Y */
-        20px
-        /* Blur */
-        rgba(255, 0, 92, 0.3);
 }
 
 /* Rotapé */
@@ -238,7 +266,7 @@ footer a {
 
 #modal {
     background: #ff5e84;
-    
+
     /* Sobrepõe tudo */
     position: absolute;
 
@@ -247,10 +275,7 @@ footer a {
     bottom: 0;
     left: 0;
 
-    width: 99.5vw;
-    height: 112vh;
-
-    padding-top: 55px;
+    padding-top: 0px;
 
     display: flex;
     /* align-items: center; */
@@ -261,7 +286,13 @@ footer a {
     transition: 400ms;
 }
 
+#modal.addScroll {
+    overflow: auto;
+}
+
 #modal .content {
+    margin-top: 2%;
+
     color: white;
 }
 
@@ -273,7 +304,8 @@ footer a {
 #modal form {
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+
+    margin: 0 auto 15%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -322,7 +354,7 @@ form a {
 
     align-items: center;
     justify-content: center;
-    
+
     /* O self é para o grid */
     align-self: end;
 
@@ -346,11 +378,12 @@ form button {
 
     cursor: pointer;
 
-    grid-column: 2; /* Coloca na coluna 2 */
+    grid-column: 2;
+    /* Coloca na coluna 2 */
 
     justify-self: end;
     margin-top: 22px;
-    
+
     transition: 400ms;
 }
 
@@ -363,4 +396,105 @@ form button:hover {
 #modal.hide {
     opacity: 0;
     visibility: hidden;
+}
+
+/* IDEAIA HTML */
+
+#page-ideias #container {
+    display: block;
+}
+
+#page-ideias header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Navegação */
+
+#page-ideias nav {
+    display: flex;
+    align-items: center;
+}
+
+#page-ideias nav li {
+    list-style-type: none;
+
+    margin-right: 16px;
+}
+
+#page-ideias nav li a {
+    color: #25282B;
+}
+
+#page-ideias nav li:last-child {
+    margin: 0;
+
+    width: 150px;
+    height: 40px;
+
+    background-color: #ff5e84;
+
+    /* Alinhar no meio do elemento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+}
+
+#page-ideias nav li:last-child:hover {
+    background-color: #dd39c7;
+    color: white;
+    text-decoration: none;
+
+    transition: 400ms;
+}
+
+#page-ideias nav li:last-child a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#page-ideias nav li:last-child a:hover {
+    text-decoration: none;
+}
+
+/* title */
+
+section#title {
+    text-align: center;
+
+}
+
+section#title p {
+    opacity: 0.8;
+
+    margin: 0;
+}
+
+section#title h1 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+/* ideias */
+
+section#ideias {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+section#ideias .idea {
+    margin: 0;
+}
+
+section#title,
+section#ideias,
+footer {
+    margin-top: 64px;
 }

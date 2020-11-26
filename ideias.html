@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ideias</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="icon"
+      href="https://www.flaticon.com/svg/static/icons/svg/3555/3555878.svg"
+    />
+  </head>
+  <body id="page-ideias">
+    <div id="container">
+      <header>
+        <a href="/index.html"><img src="logo.png" alt="Logo" /></a>
+        <nav>
+          <!-- ITENS DE UMA LISTA -->
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#" onclick="onOff(), setTopo()">Nova ideia</a></li>
+        </nav>
+      </header>
+
+      <section id="title">
+        <p>EM EXIBIÇÃO</p>
+        <h1>Ideias</h1>
+      </section>
+
+      <main>
+        <section id="ideias">
+          <div class="idea">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/3500/3500589.svg"
+              alt="Imagem de Curso de Programação"
+            />
+
+            <div class="content">
+              <h3>Curso de Programação</h3>
+              <p>Estudo</p>
+              <div class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos
+                minima saepe dolore neque architecto perspiciatis reprehenderit,
+                animi pariatur dolorem ea quia porro dicta!
+              </div>
+              <a href="#">Ir para a Ideia</a>
+            </div>
+          </div>
+
+          <div class="idea">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/3788/3788765.svg"
+              alt="Imagem de Exercício"
+            />
+
+            <div class="content">
+              <h3>Exercício</h3>
+              <p>Saúde</p>
+              <div class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos
+                minima saepe dolore neque architecto perspiciatis reprehenderit,
+                animi pariatur dolorem ea quia porro dicta!
+              </div>
+              <a href="#">Ir para a Ideia</a>
+            </div>
+          </div>
+
+          <div class="idea">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/3048/3048398.svg"
+              alt="Imagem de Meditação"
+            />
+
+            <div class="content">
+              <h3>Meditação</h3>
+              <p>Saúde</p>
+              <div class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos
+                minima saepe dolore neque architecto perspiciatis reprehenderit,
+                animi pariatur dolorem ea quia porro dicta!
+              </div>
+              <a href="#">Ir para a Ideia</a>
+            </div>
+          </div>
+
+          <div class="idea">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/3791/3791357.svg"
+              alt="Imagem de Karaoke"
+            />
+
+            <div class="content">
+              <h3>Karaoke</h3>
+              <p>Estudo</p>
+              <div class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci repudiandae incidunt dolorum sequi rem esse dignissimos
+                minima saepe dolore neque architecto perspiciatis reprehenderit,
+                animi pariatur dolorem ea quia porro dicta!
+              </div>
+              <a href="#">Ir para a Ideia</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        Com 💝<a
+          href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Lucas Henrique</a
+        >
+      </footer>
+    </div>
+
+    <!-- Modal -->
+
+    <div id="modal" class="hide">
+      <div class="content">
+        <h1>Nova Ideia</h1>
+
+        <form action="">
+          <div class="input-wrapper">
+            <label for="title">Título da Ideia</label>
+            <input type="text" name="title" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="category">Categoria</label>
+            <input type="text" name="category" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="image">Link da Image</label>
+            <input type="url" name="image" />
+
+            <label for="description"
+              >Digite uma descrição para essa ideia</label
+            >
+            <textarea name="description" cols="30" rows="10"></textarea>
+
+            <label for="ideia">Link da Ideia</label>
+            <input type="url" name="ideia" />
+          </div>
+
+          <a href="#" onclick="onOff()">Voltar</a>
+          <button>Salvar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

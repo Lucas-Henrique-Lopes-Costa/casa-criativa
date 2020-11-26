@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Recebe configurações da página -->
     <meta charset="UTF-8" />
@@ -10,16 +10,17 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="house.svg" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" href="house.svg" />
   </head>
 
   <body>
     <div id="container">
       <section id="intro">
         <header>
-          <img src="logo.png" alt="Logo" />
+          <a href="/index.html"><img src="logo.png" alt="Logo" /></a>
         </header>
 
         <main>
@@ -40,7 +41,7 @@
 
         <section id="buttons">
           <button onclick="onOff()">+ Adicionar Ideia</button>
-          <button class="fat">Ver Ideias</button>
+          <a href="ideias.html" class="button">Ver Ideias</a>
         </section>
 
         <footer>
@@ -131,7 +132,7 @@
           </div>
 
           <div class="input-wrapper">
-            <label for="image">Link da Image</label>
+            <label for="image">Link da Imagem</label>
             <input type="url" name="image" />
 
             <label for="description"
@@ -145,7 +146,6 @@
 
           <a href="#" onclick="onOff()">Voltar</a>
           <button>Salvar</button>
-
         </form>
       </div>
     </div>
