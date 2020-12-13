@@ -41,7 +41,7 @@
 
         <section id="buttons">
           <button onclick="onOff()">+ Adicionar Ideia</button>
-          <a href="/ideias.html" class="button">Ver Ideias</a>
+          <a href="ideias" class="button">Ver Ideias</a>
         </section>
 
         <footer>
@@ -55,62 +55,32 @@
       </section>
 
       <section id="last-ideias">
-        <div class="idea">
-          <img
-            src="https://www.flaticon.com/svg/static/icons/svg/3500/3500589.svg"
-            alt="Imagem de Curso de Programação"
-          />
+        <!-- Criando um LOOP, ou seja, ele vai pecorrer um vetor (será as variáveis) -->
 
-          <div class="content">
-            <h3>Curso de Programação</h3>
-            <p>Estudo</p>
-            <div class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              repudiandae incidunt dolorum sequi rem esse dignissimos minima
-              saepe dolore neque architecto perspiciatis reprehenderit, animi
-              pariatur dolorem ea quia porro dicta!
+        <!-- Para ideis dentro de IDEIAS -->
+        <!-- Ele vai repetir o número de vezes quanto forem as ideias -->
+        {% for ideia in ideias %} 
+        
+          <div class="idea">
+            <img
+              src="{{ideia.img}}" 
+              alt="Imagem de {{ideia.tile}}"
+            />
+
+            <!-- Usando variáveis -->
+
+            <div class="content">
+              <h3>{{ideia.title}}</h3>
+              <p>{{ideias.category}}</p>
+              <div class="description">
+                {{ideia.description}}
+              </div>
+              <a href="{{ideia.url}}" target = "_blank">Ir para a Ideia</a>
             </div>
-            <a href="#">Ir para a Ideia</a>
           </div>
-        </div>
 
-        <div class="idea">
-          <img
-            src="https://www.flaticon.com/svg/static/icons/svg/3788/3788765.svg"
-            alt="Imagem de Exercício"
-          />
+        {% endfor %}
 
-          <div class="content">
-            <h3>Exercício</h3>
-            <p>Saúde</p>
-            <div class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              repudiandae incidunt dolorum sequi rem esse dignissimos minima
-              saepe dolore neque architecto perspiciatis reprehenderit, animi
-              pariatur dolorem ea quia porro dicta!
-            </div>
-            <a href="#">Ir para a Ideia</a>
-          </div>
-        </div>
-
-        <!-- <div class="idea">
-          <img
-            src="https://www.flaticon.com/svg/static/icons/svg/3048/3048398.svg"
-            alt="Imagem de Meditação"
-          />
-
-          <div class="content">
-            <h3>Meditação</h3>
-            <p>Saúde</p>
-            <div class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              repudiandae incidunt dolorum sequi rem esse dignissimos minima
-              saepe dolore neque architecto perspiciatis reprehenderit, animi
-              pariatur dolorem ea quia porro dicta!
-            </div>
-            <a href="#">Ir para a Ideia</a>
-          </div>
-        </div> -->
       </section>
     </div>
 

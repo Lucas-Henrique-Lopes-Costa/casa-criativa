@@ -270,18 +270,20 @@ footer a {
     background: #ff5e84;
 
     /* Sobrepõe tudo */
-    position: absolute;
+    position: fixed; /* fica ele na página */
 
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 
-    padding-top: 0px;
+    padding-bottom: 50px;
 
     display: flex;
+
     /* align-items: center; */
     /* Alinha no eixo X */
+
     justify-content: center;
     /* Alinha no eixo Y */
 
