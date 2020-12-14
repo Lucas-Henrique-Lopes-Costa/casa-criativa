@@ -70,7 +70,7 @@ server.get("/", function (req, res) { // pegando o pedido do cliente
         console.log(lastIdeias) // repete as ideias uma por uma
     }    
     
-    return res.render("index.html", { ideias: lastIdeias }) // prepara a variável para aplicar no html
+    return res.render("index.html", { ideias: lenght }) // prepara a variável para aplicar no html
 
     // reponde o chamado
     // caso não estivesse na pasta "viwes", deve usar o "__dirname + "

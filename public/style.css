@@ -277,8 +277,6 @@ footer a {
     bottom: 0;
     left: 0;
 
-    padding-bottom: 50px;
-
     display: flex;
 
     /* align-items: center; */
@@ -296,7 +294,7 @@ footer a {
 
 #modal .content {
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 50%;
 
     color: white;
 }

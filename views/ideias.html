@@ -34,27 +34,20 @@
 
       <main>
         <section id="ideias">
-
           {% for ideia in ideias %}
-            <div class="idea">
-              <img
-                src="{{ideia.img}}" 
-                alt="Imagem de {{ideia.tile}}"
-              />
+          <div class="idea">
+            <img src="{{ideia.img}}" alt="Imagem de {{ideia.tile}}" />
 
-              <!-- Usando variáveis -->
+            <!-- Usando variáveis -->
 
-              <div class="content">
-                <h3>{{ideia.title}}</h3>
-                <p>{{ideias.category}}</p>
-                <div class="description">
-                  {{ideia.description}}
-                </div>
-                <a href="{{ideia.url}}" target = "_blank">Ir para a Ideia</a>
-              </div>
+            <div class="content">
+              <h3>{{ideia.title}}</h3>
+              <p>{{ideias.category}}</p>
+              <div class="description">{{ideia.description}}</div>
+              <a href="{{ideia.url}}" target="_blank">Ir para a Ideia</a>
             </div>
+          </div>
           {% endfor %}
-
         </section>
       </main>
 
@@ -68,41 +61,8 @@
       </footer>
     </div>
 
-    <!-- Modal -->
-
-    <div id="modal" class="hide">
-      <div class="content">
-        <h1>Nova Ideia</h1>
-
-        <form action="">
-          <div class="input-wrapper">
-            <label for="title">Título da Ideia</label>
-            <input type="text" name="title" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="category">Categoria</label>
-            <input type="text" name="category" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="image">Link da Image</label>
-            <input type="url" name="image" />
-
-            <label for="description"
-              >Digite uma descrição para essa ideia</label
-            >
-            <textarea name="description" cols="30" rows="10"></textarea>
-
-            <label for="ideia">Link da Ideia</label>
-            <input type="url" name="ideia" />
-          </div>
-
-          <a href="#" onclick="onOff()">Voltar</a>
-          <button>Salvar</button>
-        </form>
-      </div>
-    </div>
+    {% include "modal.html" %}
+    <!-- Inclue o arquivo modal.html -->
 
     <script src="scripts.js"></script>
   </body>

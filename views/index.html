@@ -1,125 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Recebe configurações da página -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Casa Criativa</title>
+{% extends "layout.html" %}
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap"
-      rel="stylesheet"
-    />
+{% block content %}
 
-    <link rel="stylesheet" href="style.css" />
+<section id="intro">
+  <header>
+    <a href="/"><img src="/logo.png" alt="Logo" /></a>
+  </header>
 
-    <link rel="icon" href="/house.svg" />
-  </head>
+  <main>
+    <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
 
-  <body>
-    <div id="container">
-      <section id="intro">
-        <header>
-          <a href="/"><img src="/logo.png" alt="Logo" /></a>
-        </header>
+    <p>
+      Iremos catalogar ideias,
+      <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong>
+      e tudo que for necessário para tornar esse momento mais interessante.
+    </p>
 
-        <main>
-          <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
+    <p>
+      Comece clicando em ver ideias para ver as ideias cadastradas e contribua
+      adicioando a sua ideia.
+    </p>
+  </main>
 
-          <p>
-            Iremos catalogar ideias,
-            <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong>
-            e tudo que for necessário para tornar esse momento mais
-            interessante.
-          </p>
+  <section id="buttons">
+    <button onclick="onOff()">+ Adicionar Ideia</button>
+    <a href="ideias" class="button">Ver Ideias</a>
+  </section>
 
-          <p>
-            Comece clicando em ver ideias para ver as ideias cadastradas e
-            contribua adicioando a sua ideia.
-          </p>
-        </main>
+  <footer>
+    Com 💝<a
+      href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Lucas Henrique</a
+    >
+  </footer>
+</section>
 
-        <section id="buttons">
-          <button onclick="onOff()">+ Adicionar Ideia</button>
-          <a href="ideias" class="button">Ver Ideias</a>
-        </section>
+<section id="last-ideias">
+  <!-- Criando um LOOP, ou seja, ele vai pecorrer um vetor (será as variáveis) -->
 
-        <footer>
-          Com 💝<a
-            href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Lucas Henrique</a
-          >
-        </footer>
-      </section>
+  <!-- Para ideis dentro de IDEIAS -->
+  <!-- Ele vai repetir o número de vezes quanto forem as ideias -->
+  {% for ideia in ideias %}
 
-      <section id="last-ideias">
-        <!-- Criando um LOOP, ou seja, ele vai pecorrer um vetor (será as variáveis) -->
+  <div class="idea">
+    <img src="{{ideia.img}}" alt="Imagem de {{ideia.tile}}" />
 
-        <!-- Para ideis dentro de IDEIAS -->
-        <!-- Ele vai repetir o número de vezes quanto forem as ideias -->
-        {% for ideia in ideias %} 
-        
-          <div class="idea">
-            <img
-              src="{{ideia.img}}" 
-              alt="Imagem de {{ideia.tile}}"
-            />
+    <!-- Usando variáveis -->
 
-            <!-- Usando variáveis -->
-
-            <div class="content">
-              <h3>{{ideia.title}}</h3>
-              <p>{{ideias.category}}</p>
-              <div class="description">
-                {{ideia.description}}
-              </div>
-              <a href="{{ideia.url}}" target = "_blank">Ir para a Ideia</a>
-            </div>
-          </div>
-
-        {% endfor %}
-
-      </section>
+    <div class="content">
+      <h3>{{ideia.title}}</h3>
+      <p>{{ideias.category}}</p>
+      <div class="description">{{ideia.description}}</div>
+      <a href="{{ideia.url}}" target="_blank">Ir para a Ideia</a>
     </div>
+  </div>
 
-    <!-- Modal -->
+  {% endfor %}
+</section>
 
-    <div id="modal" class="hide">
-      <div class="content">
-        <h1>Nova Ideia</h1>
-
-        <form action="">
-          <div class="input-wrapper">
-            <label for="title">Título da Ideia</label>
-            <input type="text" name="title" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="category">Categoria</label>
-            <input type="text" name="category" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="image">Link da Imagem</label>
-            <input type="url" name="image" />
-
-            <label for="description"
-              >Digite uma descrição para essa ideia</label
-            >
-            <textarea name="description" cols="30" rows="10"></textarea>
-
-            <label for="ideia">Link da Ideia</label>
-            <input type="url" name="ideia" />
-          </div>
-
-          <a href="#" onclick="onOff()">Voltar</a>
-          <button>Salvar</button>
-        </form>
-      </div>
-    </div>
-
-    <script src="scripts.js"></script>
-  </body>
-</html>
+{% endblock %}
