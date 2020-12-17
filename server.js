@@ -54,7 +54,6 @@ nunjucks.configure("views", {
 // Para configurar você tem que colocar como parâmetro: Onde vai colocar os HTML; e depois um Objeto = Links
 
 
-
 // Criando Rotas
 // quando no localhost estiver na url "/" ele executa a função
 server.get("/", function (req, res) { // pegando o pedido do cliente
@@ -67,10 +66,10 @@ server.get("/", function (req, res) { // pegando o pedido do cliente
             lastIdeias.push(ideia)
         }
         
-        console.log(lastIdeias) // repete as ideias uma por uma
+        // console.log(lastIdeias) // repete as ideias uma por uma
     }    
     
-    return res.render("index.html", { ideias: lenght }) // prepara a variável para aplicar no html
+    return res.render("index.html", { ideias: lastIdeias }) // prepara a variável para aplicar no html
 
     // reponde o chamado
     // caso não estivesse na pasta "viwes", deve usar o "__dirname + "
@@ -81,9 +80,6 @@ server.get("/ideias", function (req, res) {
     
     return res.render("ideias.html", { ideias: reverseIdeias})
 })
-
-
-
 
 
 // abrindo o servidor
