@@ -36,7 +36,7 @@
         <section id="ideias">
           {% for ideia in ideias %}
           <div class="idea">
-            <img src="{{ideia.img}}" alt="Imagem de {{ideia.tile}}" />
+            <img src="{{ideia.image}}" alt="Imagem de {{ideia.tile}}" />
 
             <!-- Usando variáveis -->
 
@@ -44,7 +44,7 @@
               <h3>{{ideia.title}}</h3>
               <p>{{ideias.category}}</p>
               <div class="description">{{ideia.description}}</div>
-              <a href="{{ideia.url}}" target="_blank">Ir para a Ideia</a>
+              <a href="{{ideia.link}}" target="_blank">Ir para a Ideia</a>
             </div>
           </div>
           {% endfor %}

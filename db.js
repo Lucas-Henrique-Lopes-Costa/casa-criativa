@@ -18,33 +18,33 @@ db.serialize(function() {
         `)
             // "autoincrement" = coloca o id quando é criado um banco de dados
 
-    // Inserir dados na tabela
-        const query = `
-            INSERT INTO ideias(
-                image,
-                title,
-                category,
-                description,
-                link
-            ) VALUES (?, ?, ?, ?, ?);
-        `
+    // // Inserir dados na tabela
+    //     const query = `
+    //         INSERT INTO ideias(
+    //             image,
+    //             title,
+    //             category,
+    //             description,
+    //             link
+    //         ) VALUES (?, ?, ?, ?, ?);
+    //     `
 
-        const values = [
-            "https://www.flaticon.com/svg/static/icons/svg/3500/3500589.svg",
-            "Curso de Programação",
-            "Estudo",
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
-            "https://rocketseat.com.br"
-        ]
+    //     const values = [
+    //         "https://www.flaticon.com/svg/static/icons/svg/3500/3500589.svg",
+    //         "Curso de Programação",
+    //         "Estudo",
+    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
+    //         "https://rocketseat.com.br"
+    //     ]
         
-        db.run(query, values, function (err) {
-            // se der erro
-            if (err) return console.log(err)
+    //     db.run(query, values, function (err) {
+    //         // se der erro
+    //         if (err) return console.log(err)
             
-            // caso contrário
-            console.log(this)
-        })
-            // function "callback" função dentro de uma função (assim que a função executar ele executa ela)
+    //         // caso contrário
+    //         console.log(this)
+    //     })
+    //         // function "callback" função dentro de uma função (assim que a função executar ele executa ela)
 
     // // Deletar um dado na tabela
     //     db.run(`DELETE FROM ideias WHERE id = ?`, [2], function(err) {
@@ -54,10 +54,12 @@ db.serialize(function() {
     //     })
     
     
-    //consultar um dado na tabela
-        db.all(`SELECT * FROM ideias`, function(err, rows) {
-            if (err) return console.log(err)
+    // //consultar um dado na tabela
+    //     db.all(`SELECT * FROM ideias`, function(err, rows) {
+    //         if (err) return console.log(err)
 
-            console.log(rows) // apresenta as linhas
-        })
+    //         console.log(rows) // apresenta as linhas
+    //     })
 })
+
+module.exports = db
