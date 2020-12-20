@@ -2,50 +2,15 @@ const express = require("express") // pega os arquivos do "Express"
 const server = express()
 
 // Criando variáveis para usar no HTML
-
 const db = require("./db")
-
-// const ideias = [
-//     {
-//         img: "https://www.flaticon.com/svg/static/icons/svg/3500/3500589.svg",
-//         title:"Curso de Programação",
-//         category:"Estudo",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
-//         url:"https://rocketseat.com.br"
-//     },
-//     {
-//         img: "https://www.flaticon.com/svg/static/icons/svg/3048/3048398.svg",
-//         title:"Meditação",
-//         category:"Saúde",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
-//         url:"https://www.gov.br/saude/pt-br"
-//     },
-//     {
-//         img: "https://www.flaticon.com/svg/static/icons/svg/3791/3791357.svg",
-//         title:"Karaoke",
-//         category:"Estudo",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
-//         url:"https://www.gov.br/saude/pt-br"
-//     },
-//     {
-//         img: "https://www.flaticon.com/svg/static/icons/svg/3788/3788765.svg",
-//         title:"Corrida",
-//         category:"Saúde",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
-//         url:"https://www.gov.br/saude/pt-br"
-//     },
-//     {
-//         img: "https://www.flaticon.com/svg/static/icons/svg/3869/3869297.svg",
-//         title:"Pintura",
-//         category:"Criatividade",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci",
-//         url:"https://www.gov.br/saude/pt-br"
-//     }
-// ]
-
 
 // configurar arquivos estáticos (html, css)
 server.use(express.static("public")) // cria rotas na página "public"
+
+// habilitando o uso do "req.body"
+server.use(express.urlencoded({
+    extended: true
+}))
 
 // configurando Nunjucks
 const nunjucks = require("nunjucks") // redebe todo o nunjucks o
@@ -62,7 +27,11 @@ server.get("/", function (req, res) { // pegando o pedido do cliente
 
     //consultar um dado na tabela
     db.all(`SELECT * FROM ideias`, function (err, rows) {
-        if (err) return console.log(err)
+        if (err) {
+            console.log(err)
+            return res.send("Erro no Banco de Dados!")
+
+        }
 
         const reverseIdeias = [...rows].reverse() // mesmo conteúdo só que das ideias, só que com 
 
@@ -90,7 +59,7 @@ server.get("/ideias", function (req, res) {
         if (err) {
             console.log(err)
             return res.send("Erro no Banco de Dados!")
-        
+
         }
 
         const reverseIdeias = [...rows].reverse() // mesmo conteúdo só que "estático"
@@ -99,6 +68,46 @@ server.get("/ideias", function (req, res) {
             ideias: reverseIdeias
         })
     })
+})
+
+// salvando os dados que serão adicionados
+server.post("/", function (req, res) {
+
+    // Inserir dados na tabela
+    const query = `
+            INSERT INTO ideias(
+                title,
+                image,
+                category,
+                description,
+                link
+            ) VALUES (?, ?, ?, ?, ?);
+        `
+
+    const values = [
+        req.body.title,
+        req.body.image,
+        req.body.category,
+        req.body.description,
+        req.body.link
+    ]
+
+    console.log(req.body)
+
+    db.run(query, values, function (err) {
+        // se der erro
+        if (err) {
+            console.log(err)
+            return res.send("Erro no Banco de Dados!")
+
+        }
+
+        // redirecionando depois que enviar o formulário
+        return res.redirect("/ideias")
+    })
+    // function "callback" função dentro de uma função (assim que a função executar ele executa ela)
+
+    req.body //peaga os dados inseridos como um OBJETO
 })
 
 // abrindo o servidor

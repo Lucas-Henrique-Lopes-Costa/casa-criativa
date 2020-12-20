@@ -1,5 +1,4 @@
 // configurando o banco de dados para
-
 const sqlite3 = require('sqlite3').verbose() // "verbose" serve para comunicar no terminal
 const db = new sqlite3.Database('./ws.db')
 
