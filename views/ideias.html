@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ideias</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="icon"
+      href="https://www.flaticon.com/svg/static/icons/svg/3555/3555878.svg"
+    />
+  </head>
+  <body id="page-ideias">
+    <div id="container">
+      <header>
+        <a href="/"><img src="logo.png" alt="Logo" /></a>
+        <nav>
+          <!-- ITENS DE UMA LISTA -->
+          <li><a href="/">Início</a></li>
+          <li><a href="#" onclick="onOff(), setTopo()">Nova ideia</a></li>
+        </nav>
+      </header>
+
+      <section id="title">
+        <p>EM EXIBIÇÃO</p>
+        <h1>Ideias</h1>
+      </section>
+
+      <main>
+        <section id="ideias">
+          {% for ideia in ideias %}
+          <div class="idea">
+            <img src="{{ideia.image}}" alt="Imagem de {{ideia.tile}}" />
+
+            <!-- Usando variáveis -->
+
+            <div class="content">
+              <h3>{{ideia.title}}</h3>
+              <p>{{ideias.category}}</p>
+              <div class="description">{{ideia.description}}</div>
+              <a href="{{ideia.link}}" target="_blank">Ir para a Ideia</a>
+            </div>
+          </div>
+          {% endfor %}
+        </section>
+      </main>
+
+      <footer>
+        Com 💝<a
+          href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Lucas Henrique</a
+        >
+      </footer>
+    </div>
+
+    {% include "modal.html" %}
+    <!-- Inclue o arquivo modal.html -->
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

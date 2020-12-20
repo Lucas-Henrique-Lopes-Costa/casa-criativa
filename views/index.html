@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block content %}
+
+<section id="intro">
+  <header>
+    <a href="/"><img src="/logo.png" alt="Logo" /></a>
+  </header>
+
+  <main>
+    <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
+
+    <p>
+      Iremos catalogar ideias,
+      <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong>
+      e tudo que for necessário para tornar esse momento mais interessante.
+    </p>
+
+    <p>
+      Comece clicando em ver ideias para ver as ideias cadastradas e contribua
+      adicioando a sua ideia.
+    </p>
+  </main>
+
+  <section id="buttons">
+    <button onclick="onOff()">+ Adicionar Ideia</button>
+    <a href="ideias" class="button">Ver Ideias</a>
+  </section>
+
+  <footer>
+    Com 💝<a
+      href="https://www.linkedin.com/in/lucas-henrique-lopes-costa/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Lucas Henrique</a
+    >
+  </footer>
+</section>
+
+<section id="last-ideias">
+  <!-- Criando um LOOP, ou seja, ele vai pecorrer um vetor (será as variáveis) -->
+
+  <!-- Para ideis dentro de IDEIAS -->
+  <!-- Ele vai repetir o número de vezes quanto forem as ideias -->
+  {% for ideia in ideias %}
+
+  <div class="idea">
+    <img src="{{ideia.image}}" alt="Imagem de {{ideia.title}}" />
+
+    <!-- Usando variáveis -->
+
+    <div class="content">
+      <h3>{{ideia.title}}</h3>
+      <p>{{ideias.category}}</p>
+      <div class="description">{{ideia.description}}</div>
+      <a href="{{ideia.link}}" target="_blank">Ir para a Ideia</a>
+    </div>
+  </div>
+
+  {% endfor %}
+</section>
+
+{% endblock %}
